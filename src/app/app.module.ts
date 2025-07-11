@@ -9,6 +9,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminUserComponent } from './admin/admin-user/admin-user.component';
 import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PasswordMaskPipe } from './password-mask.pipe';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.co
     NotfoundComponent,
     AdminComponent,
     AdminUserComponent,
-    AdminSettingsComponent
+    AdminSettingsComponent,
+    PasswordMaskPipe,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

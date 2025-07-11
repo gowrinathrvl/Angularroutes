@@ -1,5 +1,39 @@
 <div class="home-container">
-    <h3>This is the Home Page of Angular Routing</h3>
+  <h3>This is the Home Page of Angular Routing</h3>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <label for="name"> Name: </label>
+    <input type="text" formControlName="name" (copy)="$event.preventDefault()" 
+    (cut)="$event.preventDefault()" 
+    (paste)="$event.preventDefault()"
+    placeholder="Username" /><br><br>
+    <div *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched" style="color: red;">
+      * Username is required
+    </div>
+    <div *ngIf="myForm.get('name')?.touched  && myForm.get('name')?.errors?.['minlength']" class="" style="color: red;">
+      * Username must be at least 3 characters long   
+     </div>
+    <label for="email"> Email: </label> 
+    <input type="email" formControlName="email" placeholder="email" (paste)="$event.preventDefault()"/><br><br>
+    <div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched" style="color: red;">
+      * Enter a valid email
+    </div>
 
-    <a routerLink="/admin">Admin</a>  
-  </div>
+    <label for="password"> Password: </label> 
+    <input type="password" formControlName="password" placeholder="password"/><br><br>
+    <div *ngIf="myForm.get('password')?.touched && myForm.get('password')?.errors?.['minlength']" style="color: red;">
+      * Password has to be  min 6 letters
+    </div>
+    <div *ngIf="myForm.get('password')?.touched && myForm.get('password')?.errors?.['maxlength']" style="color: red;">
+      * Password has to be  max 10 letters
+    </div>
+    <button type="submit">Submit</button>
+    <button type="button" (click)="clearForm()">Clear</button>
+  </form>
+<div *ngIf = "submittedData">
+  <h3>Submitted Data:</h3>
+  <p><strong>Name:</strong> {{ submittedData.name |lowercase}}</p>
+  <p><strong>Email:</strong> {{ submittedData.email | uppercase}}</p>
+  <p><strong>Password:</strong> {{ submittedData.password | passwordMask }}</p>
+</div>
+  <a routerLink="/admin">Admin</a>
+</div>
