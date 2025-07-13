@@ -12,6 +12,7 @@ import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.co
 import { ReactiveFormsModule } from '@angular/forms';
 import { PasswordMaskPipe } from './password-mask.pipe';
 import { UserComponentComponent } from './about/user-component/user-component.component';
+import { AppDetachExampleComponent } from './about/app-detach-example/app-detach-example.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { UserComponentComponent } from './about/user-component/user-component.co
     AdminSettingsComponent,
     PasswordMaskPipe,
     UserComponentComponent,
+    AppDetachExampleComponent,
   ],
   imports: [
     BrowserModule,
