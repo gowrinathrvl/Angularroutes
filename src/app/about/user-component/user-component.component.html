@@ -1,0 +1,8 @@
+<p>user-component works!</p>
+
+
+<ng-container *ngIf="user$ | async as user">
+    <p><strong>Name:</strong> {{ user.name }}</p>
+  </ng-container>
+
+<!-- <h3 >{{user.name}}</h3> -->

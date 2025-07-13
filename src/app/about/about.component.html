@@ -4,6 +4,13 @@
     <a routerLink="/contact">Contact</a>
     <span> | </span>
     <a routerLink="/admin">Admin</a>
+    <!-- using @input -->
+    <!-- <app-user [user] = "user"></app-user> -->
+
+    <!-- using Observables -->
+    <app-user [user$]="user$"></app-user>
+    <button (click)="changeName()">Change Name</button>
+
 </div>
 <br>
 <button (click)="goToHome()">Home</button>
