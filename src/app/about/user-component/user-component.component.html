@@ -5,4 +5,29 @@
     <p><strong>Name:</strong> {{ user.name }}</p>
   </ng-container>
 
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Phone</th>
+        <th>Company</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let apiUser of apiUsers$ | async">
+        <td>{{ apiUser.id }}</td>
+        <td>{{ apiUser.name }}</td>
+        <td>{{ apiUser.username }}</td>
+        <td>{{ apiUser.email }}</td>
+        <td>{{ apiUser.address.city }}</td>
+        <td>{{ apiUser.phone }}</td>
+        <td>{{ apiUser.company.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+
 <!-- <h3 >{{user.name}}</h3> -->

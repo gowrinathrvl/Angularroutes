@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PasswordMaskPipe } from './password-mask.pipe';
 import { UserComponentComponent } from './about/user-component/user-component.component';
 import { AppDetachExampleComponent } from './about/app-detach-example/app-detach-example.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AppDetachExampleComponent } from './about/app-detach-example/app-detach
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
